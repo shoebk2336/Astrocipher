@@ -1,6 +1,9 @@
 import { Anchor, Group, ActionIcon, rem } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import classes from './FooterCentered.module.css';
+import Image from 'next/image';
+import logo from '../../utils/images/astro_logo.png'
+import Gradient from '../../page.module.css'
 
 const links = [
 { link: '#', label: 'Contact' },
@@ -13,7 +16,7 @@ const links = [
 export function FooterCentered() {
 const items = links.map((link) => (
     <Anchor
-    c="dimmed"
+    c="white"
     key={link.label}
     href={link.link}
     lh={1}
@@ -25,9 +28,10 @@ const items = links.map((link) => (
 ));
 
 return (
-    <div className={classes.footer}>
+    <div className={`${classes.footer} ${Gradient.bg_gradient}`}>
     <div className={classes.inner}>
         <Group className={classes.links}>{items}</Group>
+        <Image src={logo} alt='logo' width={130} height={100} style={{border:"0px solid white"}}/>
 
         <Group gap="xs" justify="flex-end" wrap="nowrap">
         <ActionIcon size="lg" variant="default" radius="xl">

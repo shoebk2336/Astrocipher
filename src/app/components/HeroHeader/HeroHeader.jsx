@@ -1,14 +1,14 @@
 import { Container, Text, Button, Group } from '@mantine/core';
 import { GithubIcon } from '@mantinex/dev-icons';
 import classes from './HeroHeader.module.css';
-
+import Gradient from'../../page.module.css'
 export function HeroTitle() {
 return (
     <div className={classes.wrapper}>
     <Container size={700} className={classes.inner}>
         <h1 className={classes.title}>
         A{' '}
-        <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
+        <Text className={Gradient.gradient} component="span"   inherit>
             fully featured
         </Text>{' '}
         React components and hooks library
